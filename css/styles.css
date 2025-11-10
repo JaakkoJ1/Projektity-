@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+.noto-serif-bengali {
+  font-family: "Noto Serif Bengali", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+
+.tasa-orbiter {
+  font-family: "TASA Orbiter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.button, button {
+  background-color: black;
+  border: rgb(65, 65, 65) solid 2px;
+  color: white;
+  padding: 13px 18px;
+  margin: 0px 35px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover, button:hover, select:hover {
+  background-color: white;
+  border: white solid 2px;
+  color: black;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+input {
+  width: 97%;
+}
+
+select {
+  width: 100%;
+  background-color: black;
+  border: rgb(65, 65, 65) solid 2px;
+  color: white;
+  padding: 13px 18px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.luokkien-tilat {
+  width: 25%;
+}
