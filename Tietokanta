@@ -1,10 +1,9 @@
-
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 10.11.2025 klo 07:20
+-- Generation Time: 10.11.2025 klo 07:59
 -- Palvelimen versio: 9.1.0
 -- PHP Version: 8.3.14
 
@@ -156,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `oppilas` (
   `sahkoposti` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `salasana` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`oppilasid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Vedos taulusta `oppilas`
@@ -169,7 +168,8 @@ INSERT INTO `oppilas` (`oppilasid`, `etunimi`, `sukunimi`, `luokka`, `puhelinnum
 (4, '1', '2', '6614', '3', '4553@431', NULL),
 (5, 'asad', '75735357', '4262642462', '537357', '357@5225424', NULL),
 (6, 'jaakko', 'j', '24c', '12345', 'jum@j', 'salasana1'),
-(7, 'jaakkoj', 'testi 2', 'tvt24c', '6556563', 'jaakko@j', 'salasana');
+(7, 'jaakkoj', 'testi 2', 'tvt24c', '6556563', 'jaakko@j', 'salasana'),
+(8, 'Jaakko', 'Jumpponen', '24c', '31315', 'jum@jaa', '1');
 
 -- --------------------------------------------------------
 
@@ -195,11 +195,6 @@ CREATE TABLE IF NOT EXISTS `oppilasvaraukset` (
 --
 
 INSERT INTO `oppilasvaraukset` (`varausid`, `oppilasid`, `luokkanumero`, `henkilomaara`, `varausalku`, `varausloppu`) VALUES
-(11, 7, 201, 20, '2025-11-07 10:09:00', '2025-11-07 15:09:00'),
-(12, 7, 205, 0, '2025-11-07 11:26:00', '2025-11-07 11:26:00'),
-(13, 7, 202, 0, '2025-11-07 08:15:00', '2025-11-07 14:15:00'),
-(14, 7, 203, 0, '2025-11-07 11:28:00', '2025-11-07 13:28:00'),
-(15, 7, 205, 1, '2025-11-07 11:41:00', '2025-11-07 15:41:00'),
 (21, 6, 204, 5, '2025-10-31 13:57:00', '2025-10-31 14:58:00'),
 (22, 6, 201, 1, '2025-11-10 08:23:00', '2025-11-10 12:23:00'),
 (23, 6, 203, 1, '2025-11-10 08:23:00', '2025-11-10 12:23:00'),
