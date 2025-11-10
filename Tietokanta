@@ -1,1 +1,232 @@
 
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: 10.11.2025 klo 07:20
+-- Palvelimen versio: 9.1.0
+-- PHP Version: 8.3.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `projektityo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `luokat`
+--
+
+DROP TABLE IF EXISTS `luokat`;
+CREATE TABLE IF NOT EXISTS `luokat` (
+  `luokkanumero` int NOT NULL,
+  `luokkakoko` tinyint NOT NULL,
+  `tyyppi` enum('Normaali','Kemia','TVT','Liikuntasali','Kuntosali','Musiikki','Kuvis','Puukäsityöt','Tekstiili','Kotitalous') COLLATE utf8mb4_general_ci NOT NULL,
+  `kaytto` enum('Opettaja','Oppilas') COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`luokkanumero`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `luokat`
+--
+
+INSERT INTO `luokat` (`luokkanumero`, `luokkakoko`, `tyyppi`, `kaytto`) VALUES
+(101, 25, 'Normaali', 'Opettaja'),
+(102, 24, 'Normaali', 'Opettaja'),
+(103, 20, 'Kemia', 'Opettaja'),
+(104, 22, 'Kemia', 'Opettaja'),
+(105, 20, 'TVT', 'Opettaja'),
+(106, 18, 'TVT', 'Opettaja'),
+(107, 30, 'Liikuntasali', 'Opettaja'),
+(109, 15, 'Kuntosali', 'Opettaja'),
+(110, 15, 'Kuntosali', 'Opettaja'),
+(111, 22, 'Musiikki', 'Opettaja'),
+(112, 20, 'Musiikki', 'Opettaja'),
+(113, 20, 'Kuvis', 'Opettaja'),
+(114, 19, 'Kuvis', 'Opettaja'),
+(115, 12, 'Puukäsityöt', 'Opettaja'),
+(116, 10, 'Tekstiili', 'Opettaja'),
+(117, 16, 'Kotitalous', 'Opettaja'),
+(201, 20, 'Normaali', 'Oppilas'),
+(202, 16, 'Normaali', 'Oppilas'),
+(203, 10, 'Normaali', 'Oppilas'),
+(204, 8, 'Kuntosali', 'Oppilas'),
+(205, 6, 'Musiikki', 'Oppilas'),
+(206, 5, 'Musiikki', 'Oppilas');
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `opettaja`
+--
+
+DROP TABLE IF EXISTS `opettaja`;
+CREATE TABLE IF NOT EXISTS `opettaja` (
+  `opettajaid` int NOT NULL AUTO_INCREMENT,
+  `etunimi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `sukunimi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `puhelinnumero` varchar(40) COLLATE utf8mb4_general_ci NOT NULL,
+  `sahkoposti` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `salasana` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`opettajaid`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `opettaja`
+--
+
+INSERT INTO `opettaja` (`opettajaid`, `etunimi`, `sukunimi`, `puhelinnumero`, `sahkoposti`, `salasana`) VALUES
+(1, 'erik', 'Cerrada Plimed', '12321321321', '12@1', NULL),
+(2, 'erik', 'plumed', '12321321321', '12@13', NULL),
+(3, 'erik', '123', '12321321321', 'erik@r', 'salasana123\r\n'),
+(4, 'asad', 'dsdsa', '123', 'jumpponenj@gmail.com', NULL),
+(5, 'Testi', '1', '12345', 'j@gmail.com', NULL),
+(6, '1', '2', '3', '4@gmail.com', NULL),
+(7, '4', '5', 'asd', '6@gmail.com', NULL),
+(8, '351531', '1', '4134351', 'd@gmail.com', NULL),
+(9, 'asad', 'dsdsa', '123', '315@5', NULL),
+(10, 't', '1', '13431', 'a@a', NULL),
+(11, '6', '53', '78585', '2@2', NULL),
+(12, '76746', '467647', '46764', '2@2545', NULL),
+(13, 'testi', '5', '1234', 'j@fgfgd', NULL),
+(14, 'testi', '5', '76576', 'testi@t', 'testi');
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `opettajavaraukset`
+--
+
+DROP TABLE IF EXISTS `opettajavaraukset`;
+CREATE TABLE IF NOT EXISTS `opettajavaraukset` (
+  `varausid` int NOT NULL AUTO_INCREMENT,
+  `opettajaid` int DEFAULT NULL,
+  `luokkanumero` int DEFAULT NULL,
+  `henkilomaara` tinyint NOT NULL,
+  `varausalku` datetime NOT NULL,
+  `varausloppu` datetime NOT NULL,
+  PRIMARY KEY (`varausid`),
+  KEY `opettajaid` (`opettajaid`),
+  KEY `luokkanumero` (`luokkanumero`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `opettajavaraukset`
+--
+
+INSERT INTO `opettajavaraukset` (`varausid`, `opettajaid`, `luokkanumero`, `henkilomaara`, `varausalku`, `varausloppu`) VALUES
+(1, 3, 105, 20, '2025-11-07 12:22:00', '2025-11-07 13:22:00'),
+(2, 3, 106, 0, '2025-11-07 12:24:00', '2025-11-07 16:24:00'),
+(3, 14, 101, 17, '2025-11-10 02:29:00', '2025-11-10 17:26:00'),
+(4, 14, 107, 5, '2025-11-07 12:40:00', '2025-11-07 16:40:00'),
+(5, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(6, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(7, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(8, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(9, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(10, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(11, 14, 101, 5, '2025-11-07 12:44:00', '2025-11-07 16:44:00'),
+(12, 14, 102, 5, '2025-11-07 12:56:00', '2025-11-07 13:56:00'),
+(13, 3, 102, 5, '2025-11-10 08:42:00', '2025-11-10 12:42:00');
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `oppilas`
+--
+
+DROP TABLE IF EXISTS `oppilas`;
+CREATE TABLE IF NOT EXISTS `oppilas` (
+  `oppilasid` int NOT NULL AUTO_INCREMENT,
+  `etunimi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `sukunimi` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `luokka` varchar(10) COLLATE utf8mb4_general_ci NOT NULL,
+  `puhelinnumero` varchar(40) COLLATE utf8mb4_general_ci NOT NULL,
+  `sahkoposti` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `salasana` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`oppilasid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `oppilas`
+--
+
+INSERT INTO `oppilas` (`oppilasid`, `etunimi`, `sukunimi`, `luokka`, `puhelinnumero`, `sahkoposti`, `salasana`) VALUES
+(1, 'erik', 'plumed', '24c', '12321321321', 'erik.cerradaplumed@gmail.com', NULL),
+(2, 'testi', '4', 'testi', '351', '531@431', NULL),
+(3, '542254', '2425', '315531', '44242', '5@4', NULL),
+(4, '1', '2', '6614', '3', '4553@431', NULL),
+(5, 'asad', '75735357', '4262642462', '537357', '357@5225424', NULL),
+(6, 'jaakko', 'j', '24c', '12345', 'jum@j', 'salasana1'),
+(7, 'jaakkoj', 'testi 2', 'tvt24c', '6556563', 'jaakko@j', 'salasana');
+
+-- --------------------------------------------------------
+
+--
+-- Rakenne taululle `oppilasvaraukset`
+--
+
+DROP TABLE IF EXISTS `oppilasvaraukset`;
+CREATE TABLE IF NOT EXISTS `oppilasvaraukset` (
+  `varausid` int NOT NULL AUTO_INCREMENT,
+  `oppilasid` int DEFAULT NULL,
+  `luokkanumero` int DEFAULT NULL,
+  `henkilomaara` tinyint NOT NULL,
+  `varausalku` datetime NOT NULL,
+  `varausloppu` datetime NOT NULL,
+  PRIMARY KEY (`varausid`),
+  KEY `oppilasid` (`oppilasid`),
+  KEY `luokkanumero` (`luokkanumero`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Vedos taulusta `oppilasvaraukset`
+--
+
+INSERT INTO `oppilasvaraukset` (`varausid`, `oppilasid`, `luokkanumero`, `henkilomaara`, `varausalku`, `varausloppu`) VALUES
+(11, 7, 201, 20, '2025-11-07 10:09:00', '2025-11-07 15:09:00'),
+(12, 7, 205, 0, '2025-11-07 11:26:00', '2025-11-07 11:26:00'),
+(13, 7, 202, 0, '2025-11-07 08:15:00', '2025-11-07 14:15:00'),
+(14, 7, 203, 0, '2025-11-07 11:28:00', '2025-11-07 13:28:00'),
+(15, 7, 205, 1, '2025-11-07 11:41:00', '2025-11-07 15:41:00'),
+(21, 6, 204, 5, '2025-10-31 13:57:00', '2025-10-31 14:58:00'),
+(22, 6, 201, 1, '2025-11-10 08:23:00', '2025-11-10 12:23:00'),
+(23, 6, 203, 1, '2025-11-10 08:23:00', '2025-11-10 12:23:00'),
+(24, 6, 202, 1, '2025-11-10 08:24:00', '2025-11-10 11:24:00'),
+(25, 6, 205, 5, '2025-11-10 09:31:00', '2025-11-10 10:31:00'),
+(26, 6, 206, 1, '2025-11-10 08:37:00', '2025-11-10 12:37:00'),
+(27, 7, 204, 5, '2025-11-10 09:43:00', '2025-11-10 11:43:00');
+
+--
+-- Rajoitteet vedostauluille
+--
+
+--
+-- Rajoitteet taululle `opettajavaraukset`
+--
+ALTER TABLE `opettajavaraukset`
+  ADD CONSTRAINT `opettajavaraukset_ibfk_1` FOREIGN KEY (`opettajaid`) REFERENCES `opettaja` (`opettajaid`),
+  ADD CONSTRAINT `opettajavaraukset_ibfk_2` FOREIGN KEY (`luokkanumero`) REFERENCES `luokat` (`luokkanumero`);
+
+--
+-- Rajoitteet taululle `oppilasvaraukset`
+--
+ALTER TABLE `oppilasvaraukset`
+  ADD CONSTRAINT `oppilasvaraukset_ibfk_1` FOREIGN KEY (`oppilasid`) REFERENCES `oppilas` (`oppilasid`),
+  ADD CONSTRAINT `oppilasvaraukset_ibfk_2` FOREIGN KEY (`luokkanumero`) REFERENCES `luokat` (`luokkanumero`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
