@@ -1,46 +1,30 @@
-Raportti – pe 7.11.25
+Aloituspalaveri - ti 4.11.25 Erik: Kirjoita lyhyt esittely itsestäsi (nimi, rooli, osaamisalue). o Erik Cerrada Plumed o Backend o koodaaminen erityisesti (sql, html, php) Mieti toiveet tai rajoitukset työajoista ja vastuista. o Toivon tasaisia työaikoja ja vastuita kaikille silleen, että kenenkään mielestä ei ole epätasaista työmäärää Jaakko: Kirjoita lyhyt esittely itsestäsi (nimi, rooli, osaamisalue). o Jaakko Jumpponen, Rooli: Front-end, osaan HTML, CSS, vähän JavaScript Mieti toiveet tai rajoitukset työajoista ja vastuista. o Toiveet: Työskennellä HTML ja CSS parissa. (ehkä vähän JavaScript) o Rajoitukset: Teen vain front-end:iin liittyvät hommat ja muut hommat mitä tarvitsee, mutta en back-end:iä (kuuluu Erikille). Muita rajoituksia ei ole. Tutustu ja lataa jaettu dokumenttimalli (jos lähetetty etukäteen). • Aihe: Projektityö - Luokkavarausjärjestelmä nettisivut • Kickoff: • Ensisijainen viestintä: Discord • Varakanava: sähköposti (jumpponenj@gmail.com) • Trello: https://trello.com/b/15h2DiKo • Projektikansio: GitHub - https://github.com/JaakkoJ1/Projektity- • Kansion omistaja: JaakkoJ1 • Kanavat: ⁠yleinen  , ⁠päivittäinen  , ⁠frontend  , ⁠backend  , ⁠testaus  , ⁠dokumentaatio  • Nimeämiskäytäntö: YYYYMMDD_Tyyppi_Kuvaus_Versio.ext • Seuraavat tehtävät: o Erik: Back-end o Jaakko: Front-end
 
-ma 3.11.25:
+[Näytös luokalle] Projekti näytös Tänään 6.11.2025 esiteltiin lyhesti projekti luokalle. Esitettiin ensin tieotkanna er-kaavio ja sitten selitettiin vähän sivuston toimintoa. Lopulta näytettiin kirjoitettu suunnitelma ja päätettiin näytös.
 
-•    Käytiin teoriaa läpi, moodboardit, kanban, trello, jne.
+pe 7.11.25 Tänään ollaan tehty eteenpäin varaus sivustoja, php:itä ja tyylitiedostoja varaus oppilaat saatiin kokonaan valmiiksi ja muita php tiedostoja, jne
 
-ti 4.11.25:
+Raportti – pe 7.11.25 ma 3.11.25: • Käytiin teoriaa läpi, moodboardit, kanban, trello, jne. ti 4.11.25: • Luotiin ryhmät, tutustuttiin ryhmäläisiin, jaettiin roolit (Front-end ja Back-end) • Luotiin ensimmäisiä projektin suunnitelmia, ER-kaavioita ja tehtiin tyhjät html pohjat, joita pystyi aloittamaan tekemään, luotiin Discord kanava, jossa voidaan keskustella, luotiin trello, github (kansiorakenne), jne. ke 5.11.25 (Etäpäivä): • Luotiin ensimmäiset html sivut, css tiedostot, ensimmäiset versiot. to 6.11.25: • Luotiin SQL tietokanta. • Tehtiin eteenpäin kirjautumis, rekisteröitymissivuja, yhdistettiin html, php ja tiedot sql tietokannasta. • Muokattiin CSS tiedostoa. • Esitettiin projekti tähän mennessä lyhyesti luokalle. Esitettiin ensin tietokannan er-kaavio ja sitten selitettiin vähän sivuston toimintoa. Lopulta näytettiin kirjoitettu suunnitelma ja päätettiin näytös. pe 7.11.25: • Ollaan tehty eteenpäin varaus sivustoja, php:itä ja tyylitiedostoja. • Varaus oppilaat sivu ja muita php tiedostoja saatiin valmiiksi.
 
-•    Luotiin ryhmät, tutustuttiin ryhmäläisiin, jaettiin roolit (Front-end ja Back-end)
-•    Luotiin ensimmäisiä projektin suunnitelmia, ER-kaavioita ja tehtiin tyhjät html pohjat, joita pystyi aloittamaan tekemään, luotiin Discord kanava, jossa voidaan keskustella, luotiin trello, github (kansiorakenne), jne.
+pe 7.11.25 (update) molempien oppilaitten ja opettajien varaus sivut valmiina luokkien tilat sivu valmiina
 
-ke 5.11.25 (Etäpäivä):
+pe 7.11.25 (update 13.34) näytettiin opettajalle työ, mitä ollaan saatu tehtyä, suunnitelmia, dokumentointia, jne. ma 10.11.25 suunnitelma: meiltä puuttuu vielä omat varaukset sivut, joten niitä voidaan kehitellä, HTML ja PHP admin sivut tarvitaan myös ja backend sivut muuta ei puutu
 
-•    Luotiin ensimmäiset html sivut, css tiedostot, ensimmäiset versiot.
+pe 7.11.25 (update Erik) Sain valmiiksi käytäjä ystävällisen varaus sivun oppilaille. Seuraavalla kerralla (ma 10.11.25) lisään saman toiminnon opettajien varaus sivulle ja teen omat varaukset sivun.
 
-to 6.11.25:
+ma 10.11.25 asennettiin GitHub työpöytäversio muokkasin GitHub repositiota vähän (lisätty tiedostoja, readme muokattu ja tietokanta) lisätty Juho Kastemaa contributoriksi julkaistu GitHub repositio nettisivuksi - https://jaakkoj1.github.io/Projektity-/ (toimii vähän huonosti, kun on suurin osa php tiedostoja)
 
-•    Luotiin SQL tietokanta.
-•    Tehtiin eteenpäin kirjautumis, rekisteröitymissivuja, yhdistettiin html, php ja tiedot sql tietokannasta.
-•    Muokattiin CSS tiedostoa.
-•    Esitettiin projekti tähän mennessä lyhyesti luokalle. Esitettiin ensin tietokannan er-kaavio ja sitten selitettiin vähän sivuston toimintoa. Lopulta näytettiin kirjoitettu suunnitelma ja päätettiin näytös.
+ma 10.11.25 (update) saatiin varaus sivut valmiiksi
+ti 11.11.25 admin sivut saatiin tehtyä nyt suunnitellaan paletteja sivujen UI:ta, jne
 
-pe 7.11.25:
+ti 11.11.25 (update) valittiin paletti luotiin suunnitelmat jokaiselle sivulle käyttämällä PowerPointtia etusivu tyylitiedosto muokattu ja valmis
 
-•    Ollaan tehty eteenpäin varaus sivustoja, php:itä ja tyylitiedostoja.
-•    Varaus oppilaat sivu ja muita php tiedostoja saatiin valmiiksi.
+lisätty admin kirjautuminen ja paneeli josta pystyy antamaan salasanoja käyttäjille ja poistamaan niitä. Paneelissa pystyy myös lisäämään ja poistamaan luokkia.
 
+ke 12.11.25 muokkasin rekisteröintisivun tyyliä vähän
 
-pe 7.11.25 (update)
+13.11.2025 Lisätty tietokannat linux palvelimeen projektityön esittämistä varten. Huomenna lisätään myös koodi tiedostot, testiraportin ja loppuraportin luomisen jälkeen.
 
-molempien oppilaitten ja opettajien varaus sivut valmiina
+to 13.11.25 (update) korjattiin responsiivisuus kaikilla sivuilla kaikki sivut aika valmiiksi (tyylitiedostot muokattu) korjattu virheet
 
-luokkien tilat sivu valmiina 
-
-
-pe 7.11.25 (update 13.34)
-
-näytettiin opettajalle työ, mitä ollaan saatu tehtyä, suunnitelmia, dokumentointia, jne.
-
-ma 10.11.25 suunnitelma:
-
-meiltä puuttuu vielä omat varaukset sivut, joten niitä voidaan kehitellä, HTML ja PHP
-admin sivut tarvitaan myös
-ja backend sivut
-
-muuta ei puutu
+pe 14.11.25 kaikki on valmista, pitää vaan tehdä testaukset, loppuraportit ja linux palvelimeen siirto ainut virhe on kun varaa luokan ja sitten päivittää sivun niin se varaa toisen kerran (tätä ei tarvitse kuitenkaan korjata tähän projektiin)
